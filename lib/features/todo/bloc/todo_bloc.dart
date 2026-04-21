@@ -5,13 +5,13 @@ import 'package:flutter_bloc/flutter_bloc.dart';
 
 class TodoBloc extends Bloc<TodoEvent, TodoState> {
   TodoBloc() : super(TodoInitial()) {
-    on<TodoAdded>(_onTodoAdded);
+    on<AddTodo>(_onTodoAdded);
     on<TodoUpdated>(_onTodoUpdated);
     on<TodoDeleted>(_onTodoDeleted);
     on<TodoCompleted>(_onTodoCompleted);
   }
 
-  void _onTodoAdded(TodoAdded event, Emitter<TodoState> emit) {
+  void _onTodoAdded(AddTodo event, Emitter<TodoState> emit) {
     final int lastTodoId = state.todos.isEmpty ? 0 : state.todos.last.id;
     emit(
       TodoLoaded(

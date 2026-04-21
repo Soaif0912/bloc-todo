@@ -2,12 +2,11 @@ sealed class TodoEvent {
   const TodoEvent();
 }
 
-class TodoAdded extends TodoEvent {
-  final int id;
+class AddTodo extends TodoEvent {
   final String title;
   final String description;
 
-  TodoAdded({required this.id, required this.title, required this.description});
+  AddTodo({required this.title, required this.description});
 }
 
 class TodoUpdated extends TodoEvent {
