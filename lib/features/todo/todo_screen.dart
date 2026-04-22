@@ -62,12 +62,12 @@ class TodoCard extends StatelessWidget {
           const Gap(8),
           Expanded(
             child: Column(
-              crossAxisAlignment: .start,
+              crossAxisAlignment: CrossAxisAlignment.start,
               children: [Text(todo.title), Text(todo.description)],
             ),
           ),
           PopupMenuButton(
-            position: .under,
+            position: PopupMenuPosition.under,
             itemBuilder: (context) {
               return [
                 PopupMenuItem(
@@ -102,7 +102,7 @@ void _showAddTodoDialog(BuildContext context) {
       return AlertDialog(
         title: const Text("Add Todo"),
         content: Column(
-          mainAxisSize: .min,
+          mainAxisSize: MainAxisSize.min,
           children: [
             Form(
               key: todoAddFormKey,
@@ -172,7 +172,7 @@ void _showUpdateDialog(BuildContext context, Todo todo) {
       return AlertDialog(
         title: const Text("Update Todo"),
         content: Column(
-          mainAxisSize: .min,
+          mainAxisSize: MainAxisSize.min,
           children: [
             Form(
               key: todoUpdateFormKey,

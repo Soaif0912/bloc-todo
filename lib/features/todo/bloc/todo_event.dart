@@ -2,6 +2,11 @@ sealed class TodoEvent {
   const TodoEvent();
 }
 
+class LoadTodos extends TodoEvent {
+  const LoadTodos();
+}
+
+
 class AddTodo extends TodoEvent {
   final String title;
   final String description;
